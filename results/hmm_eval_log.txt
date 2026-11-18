@@ -1,0 +1,45 @@
+{'alpha': 0.5, 'beta': 2.0, 'hmm_top1': np.float64(0.872677826777149), 'route_f1': np.float64(0.8762847861569251)}
+{'alpha': 0.5, 'beta': 5.0, 'hmm_top1': np.float64(0.8719283547857772), 'route_f1': np.float64(0.8876602769359199)}
+{'alpha': 0.5, 'beta': 10.0, 'hmm_top1': np.float64(0.8812551711180419), 'route_f1': np.float64(0.886673626946743)}
+{'alpha': 0.5, 'beta': 20.0, 'hmm_top1': np.float64(0.8834611309832917), 'route_f1': np.float64(0.8835324485367281)}
+{'alpha': 1.0, 'beta': 2.0, 'hmm_top1': np.float64(0.895007084847728), 'route_f1': np.float64(0.8921690026958523)}
+{'alpha': 1.0, 'beta': 5.0, 'hmm_top1': np.float64(0.8939124954720539), 'route_f1': np.float64(0.8902946549061767)}
+{'alpha': 1.0, 'beta': 10.0, 'hmm_top1': np.float64(0.8935282172298006), 'route_f1': np.float64(0.8797589389863184)}
+{'alpha': 1.0, 'beta': 20.0, 'hmm_top1': np.float64(0.8937202668876295), 'route_f1': np.float64(0.8740515025807089)}
+{'alpha': 2.0, 'beta': 2.0, 'hmm_top1': np.float64(0.9156656038652752), 'route_f1': np.float64(0.8992158761281557)}
+{'alpha': 2.0, 'beta': 5.0, 'hmm_top1': np.float64(0.9060287272616317), 'route_f1': np.float64(0.884413258666186)}
+{'alpha': 2.0, 'beta': 10.0, 'hmm_top1': np.float64(0.9036495915797459), 'route_f1': np.float64(0.8720888657716213)}
+{'alpha': 2.0, 'beta': 20.0, 'hmm_top1': np.float64(0.9019379885145656), 'route_f1': np.float64(0.8586253283475448)}
+{'trip': '00000000', 'n_obs': 2503, 'n_scored': 2503, 'clf_top1_accuracy': 0.9557, 'clf_route_continuity': 0.7037, 'clf_route_precision': 0.8827, 'clf_route_recall': 0.9665, 'clf_route_f1': 0.9227, 'hmm_top1_accuracy': 0.9668, 'hmm_route_continuity': 0.9461, 'hmm_route_precision': 0.9405, 'hmm_route_recall': 0.9721, 'hmm_route_f1': 0.956, 'hmm_filled_route_route_continuity': 0.9916, 'hmm_filled_route_route_precision': 0.8818, 'hmm_filled_route_route_recall': 1.0, 'hmm_filled_route_route_f1': 0.9372, 'breaks': 0, 'unfilled': 2, 'features_and_classifier_s': 0.7619, 'viterbi_s': 0.4023, 'total_s': 1.1642}
+{'trip': '00000007', 'n_obs': 1354, 'n_scored': 1354, 'clf_top1_accuracy': 0.9653, 'clf_route_continuity': 0.9793, 'clf_route_precision': 0.9758, 'clf_route_recall': 0.9837, 'clf_route_f1': 0.9798, 'hmm_top1_accuracy': 0.9941, 'hmm_route_continuity': 0.984, 'hmm_route_precision': 0.984, 'hmm_route_recall': 1.0, 'hmm_route_f1': 0.9919, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.9389, 'hmm_filled_route_route_recall': 1.0, 'hmm_filled_route_route_f1': 0.9685, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.2466, 'viterbi_s': 0.1476, 'total_s': 0.3941}
+{'trip': '00000009', 'n_obs': 1049, 'n_scored': 1049, 'clf_top1_accuracy': 0.8837, 'clf_route_continuity': 0.7349, 'clf_route_precision': 0.8928, 'clf_route_recall': 0.8345, 'clf_route_f1': 0.8627, 'hmm_top1_accuracy': 0.9075, 'hmm_route_continuity': 0.856, 'hmm_route_precision': 0.937, 'hmm_route_recall': 0.8322, 'hmm_route_f1': 0.8815, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.9256, 'hmm_filled_route_route_recall': 0.986, 'hmm_filled_route_route_f1': 0.9549, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.5464, 'viterbi_s': 0.468, 'total_s': 1.0144}
+{'trip': '00000040', 'n_obs': 2995, 'n_scored': 2995, 'clf_top1_accuracy': 0.9563, 'clf_route_continuity': 0.7455, 'clf_route_precision': 0.9074, 'clf_route_recall': 0.9515, 'clf_route_f1': 0.9289, 'hmm_top1_accuracy': 0.9563, 'hmm_route_continuity': 0.9642, 'hmm_route_precision': 0.977, 'hmm_route_recall': 0.9612, 'hmm_route_f1': 0.969, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.9778, 'hmm_filled_route_route_recall': 1.0, 'hmm_filled_route_route_f1': 0.9888, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.9824, 'viterbi_s': 0.4749, 'total_s': 1.4573}
+{'trip': '00000052', 'n_obs': 262, 'n_scored': 262, 'clf_top1_accuracy': 0.9733, 'clf_route_continuity': 0.7927, 'clf_route_precision': 0.9512, 'clf_route_recall': 0.8211, 'clf_route_f1': 0.8814, 'hmm_top1_accuracy': 0.9962, 'hmm_route_continuity': 0.8625, 'hmm_route_precision': 1.0, 'hmm_route_recall': 0.8526, 'hmm_route_f1': 0.9205, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 1.0, 'hmm_filled_route_route_recall': 0.9789, 'hmm_filled_route_route_f1': 0.9894, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.1339, 'viterbi_s': 0.093, 'total_s': 0.2269}
+{'trip': '00000056', 'n_obs': 3958, 'n_scored': 3941, 'clf_top1_accuracy': 0.9165, 'clf_route_continuity': 0.7206, 'clf_route_precision': 0.9406, 'clf_route_recall': 0.8895, 'clf_route_f1': 0.9143, 'hmm_top1_accuracy': 0.9553, 'hmm_route_continuity': 0.8879, 'hmm_route_precision': 0.9806, 'hmm_route_recall': 0.8989, 'hmm_route_f1': 0.938, 'hmm_filled_route_route_continuity': 0.9994, 'hmm_filled_route_route_precision': 0.8545, 'hmm_filled_route_route_recall': 0.9953, 'hmm_filled_route_route_f1': 0.9196, 'breaks': 0, 'unfilled': 1, 'features_and_classifier_s': 1.2497, 'viterbi_s': 1.2859, 'total_s': 2.5356}
+{'trip': '00000065', 'n_obs': 768, 'n_scored': 768, 'clf_top1_accuracy': 0.8633, 'clf_route_continuity': 0.7759, 'clf_route_precision': 0.8851, 'clf_route_recall': 0.9034, 'clf_route_f1': 0.8942, 'hmm_top1_accuracy': 0.8841, 'hmm_route_continuity': 0.9041, 'hmm_route_precision': 0.971, 'hmm_route_recall': 0.9241, 'hmm_route_f1': 0.947, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.9355, 'hmm_filled_route_route_recall': 1.0, 'hmm_filled_route_route_f1': 0.9667, 'breaks': 1, 'unfilled': 0, 'features_and_classifier_s': 0.4584, 'viterbi_s': 0.2857, 'total_s': 0.744}
+{'trip': '00000076', 'n_obs': 1486, 'n_scored': 1486, 'clf_top1_accuracy': 0.9273, 'clf_route_continuity': 0.685, 'clf_route_precision': 0.8586, 'clf_route_recall': 0.877, 'clf_route_f1': 0.8677, 'hmm_top1_accuracy': 0.9549, 'hmm_route_continuity': 0.8832, 'hmm_route_precision': 0.9456, 'hmm_route_recall': 0.8824, 'hmm_route_f1': 0.9129, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.8132, 'hmm_filled_route_route_recall': 0.9893, 'hmm_filled_route_route_f1': 0.8926, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 1.5642, 'viterbi_s': 0.647, 'total_s': 2.2111}
+{'trip': '00000077', 'n_obs': 3911, 'n_scored': 3911, 'clf_top1_accuracy': 0.7745, 'clf_route_continuity': 0.738, 'clf_route_precision': 0.7969, 'clf_route_recall': 0.9664, 'clf_route_f1': 0.8735, 'hmm_top1_accuracy': 0.776, 'hmm_route_continuity': 0.9065, 'hmm_route_precision': 0.8553, 'hmm_route_recall': 0.9701, 'hmm_route_f1': 0.9091, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.7657, 'hmm_filled_route_route_recall': 1.0, 'hmm_filled_route_route_f1': 0.8673, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.8141, 'viterbi_s': 1.3614, 'total_s': 2.1755}
+{'trip': '00000091', 'n_obs': 874, 'n_scored': 874, 'clf_top1_accuracy': 0.905, 'clf_route_continuity': 0.6769, 'clf_route_precision': 0.9059, 'clf_route_recall': 0.7888, 'clf_route_f1': 0.8433, 'hmm_top1_accuracy': 0.9176, 'hmm_route_continuity': 0.8756, 'hmm_route_precision': 0.9531, 'hmm_route_recall': 0.7888, 'hmm_route_f1': 0.8632, 'hmm_filled_route_route_continuity': 1.0, 'hmm_filled_route_route_precision': 0.7804, 'hmm_filled_route_route_recall': 0.9957, 'hmm_filled_route_route_f1': 0.875, 'breaks': 0, 'unfilled': 0, 'features_and_classifier_s': 0.4182, 'viterbi_s': 0.3204, 'total_s': 0.7386}
+
+weighted top1 clf 0.899441048947396 hmm 0.9164185341900434
+n_obs                                1916.0000
+n_scored                             1914.3000
+clf_top1_accuracy                       0.9121
+clf_route_continuity                    0.7552
+clf_route_precision                     0.8997
+clf_route_recall                        0.8982
+clf_route_f1                            0.8968
+hmm_top1_accuracy                       0.9309
+hmm_route_continuity                    0.9070
+hmm_route_precision                     0.9544
+hmm_route_recall                        0.9082
+hmm_route_f1                            0.9289
+hmm_filled_route_route_continuity       0.9991
+hmm_filled_route_route_precision        0.8873
+hmm_filled_route_route_recall           0.9945
+hmm_filled_route_route_f1               0.9360
+breaks                                  0.1000
+unfilled                                0.3000
+features_and_classifier_s               0.7176
+viterbi_s                               0.5486
+total_s                                 1.2662
