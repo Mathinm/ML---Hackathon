@@ -1,0 +1,10 @@
+data/
+__pycache__/
+*.pyc
+.venv/
+results/features_*.parquet
+results/obs_*.parquet
+logs/
+models/extra_trees.joblib
+models/random_forest.joblib
+models/knn.joblib
