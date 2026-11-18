@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PathSnap — Evaluator UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  body { margin:0; font-family: system-ui, sans-serif; display:flex; height:100vh; color:#1d2433; }
+  #side { width:340px; padding:16px; overflow-y:auto; border-right:1px solid #ddd; box-sizing:border-box; }
+  #map { flex:1; }
+  h1 { font-size:20px; margin:0 0 4px; } .sub { color:#667; font-size:13px; margin-bottom:14px; }
+  input { width:100%; padding:7px; box-sizing:border-box; font-family:monospace; }
+  button { padding:7px 10px; margin:3px 3px 3px 0; border:1px solid #889; background:#fff; border-radius:6px; cursor:pointer; }
+  button.active { background:#2457d6; color:#fff; border-color:#2457d6; }
+  #trips button { width:30%; font-family:monospace; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+  td, th { border-bottom:1px solid #eee; padding:4px; text-align:right; } td:first-child, th:first-child { text-align:left; }
+  #status { font-size:13px; margin:10px 0; color:#555; min-height:18px; }
+  .legend { background:#fff; padding:6px 10px; border-radius:6px; font-size:12px; line-height:18px; }
+  .sw { display:inline-block; width:14px; height:4px; margin-right:6px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<div id="side">
+  <h1>PathSnap</h1>
+  <div class="sub">Map-matching &amp; route reconstruction — evaluator console</div>
+  <label>API URL (Laptop 1)</label>
+  <input id="api" value="http://127.0.0.1:8000">
+  <button onclick="loadTrips()">Load evaluation trips</button>
+  <div id="status"></div>
+  <div id="trips"></div>
+  <div id="results"></div>
+</div>
+<div id="map"></div>
+<script>
+const map = L.map('map').setView([20, 0], 2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; OpenStreetMap'}).addTo(map);
+let layers = {}; let ctrl = null;
+const legend = L.control({position: 'bottomright'});
+legend.onAdd = () => { const d = L.DomUtil.create('div', 'legend');
+  d.innerHTML = '<span class="sw" style="background:#1f6feb"></span>Raw GPS<br><span class="sw" style="background:#e5484d"></span>Predicted route (HMM)'; return d; };
+legend.addTo(map);
+const qs = new URLSearchParams(location.search); if (qs.get('api')) document.getElementById('api').value = qs.get('api');
+const api = () => document.getElementById('api').value.replace(/\/$/, '');
+const status = (s) => document.getElementById('status').textContent = s;
+
+async function loadTrips() {
+  status('Contacting API…');
+  try {
+    const r = await fetch(api() + '/trips'); const j = await r.json();
+    const div = document.getElementById('trips'); div.innerHTML = '';
+    j.trips.forEach(t => { const b = document.createElement('button'); b.textContent = t; b.onclick = () => run(t, b); div.appendChild(b); });
+    status(`${j.trips.length} trips in partition "${j.partition}". Select one.`);
+  } catch (e) { status('API unreachable: ' + e); }
+}
+
+async function run(tid, btn) {
+  document.querySelectorAll('#trips button').forEach(b => b.classList.remove('active')); btn.classList.add('active');
+  status(`Running pipeline for trip ${tid}…`); const t0 = performance.now();
+  try {
+    const r = await fetch(api() + '/predict', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({trip_id: tid})});
+    if (!r.ok) throw new Error(await r.text());
+    const j = await r.json(); draw(j); table(j, (performance.now() - t0) / 1000);
+    status(`Trip ${tid} done.`);
+  } catch (e) { status('Error: ' + e); }
+}
+
+function draw(j) {
+  Object.values(layers).forEach(l => map.removeLayer(l)); if (ctrl) map.removeControl(ctrl);
+  const gps = L.layerGroup(j.gps.map(p => L.circleMarker(p, {radius: 2, color: '#1f6feb', weight: 1, fillOpacity: .7})));
+  const route = L.layerGroup(j.predicted_route.map(ln => L.polyline(ln, {color: '#e5484d', weight: 4, opacity: .85})));
+  layers = {'Raw GPS': gps, 'Predicted route': route};
+  gps.addTo(map); route.addTo(map);
+  ctrl = L.control.layers(null, layers, {collapsed: false}).addTo(map);
+  map.fitBounds(L.latLngBounds(j.gps), {padding: [20, 20]});
+}
+
+function table(j, rt) {
+  const m = j.metrics; const f = (x) => (x * 100).toFixed(2) + '%';
+  let h = `<h3>Trip ${j.trip_id}</h3><div class="sub">${j.n_gps} GPS points · ${j.n_route_arcs} route arcs</div>`;
+  if (m) {
+    h += `<table><tr><th>Metric</th><th>Classifier</th><th>+ HMM</th></tr>
+      <tr><td>Top-1 accuracy (per GPS point)</td><td>${f(m.clf.top1_accuracy)}</td><td><b>${f(m.hmm.top1_accuracy)}</b></td></tr>
+      <tr><td>Route continuity</td><td>${f(m.clf.route_continuity)}</td><td>${f(m.hmm_filled_route.route_continuity)}</td></tr>
+      <tr><td>Route precision</td><td>${f(m.clf.route_precision)}</td><td>${f(m.hmm_filled_route.route_precision)}</td></tr>
+      <tr><td>Route recall</td><td>${f(m.clf.route_recall)}</td><td>${f(m.hmm_filled_route.route_recall)}</td></tr>
+      <tr><td>Route F1</td><td>${f(m.clf.route_f1)}</td><td><b>${f(m.hmm_filled_route.route_f1)}</b></td></tr></table>
+      <div class="sub">Scored on ${m.n_scored_obs}/${m.n_obs} points (server-side reference).</div>`;
+  }
+  h += `<table><tr><th>Timing</th><th>s</th></tr>
+    <tr><td>Features + classifier</td><td>${j.timing.features_and_classifier_s}</td></tr>
+    <tr><td>Viterbi + route fill</td><td>${j.timing.viterbi_s}</td></tr>
+    <tr><td>Server total</td><td>${j.server_total_s}</td></tr>
+    <tr><td>Round trip (UI)</td><td>${rt.toFixed(2)}</td></tr></table>`;
+  document.getElementById('results').innerHTML = h;
+}
+</script>
+</body>
+</html>
