@@ -1,0 +1,19 @@
+{
+  "model": "xgboost",
+  "best_params": {
+    "n_estimators": 150,
+    "learning_rate": 0.03049619218048768,
+    "max_depth": 7,
+    "min_child_weight": 5.394024862240316,
+    "subsample": 0.9699958065045932,
+    "colsample_bytree": 0.750671902111442,
+    "reg_lambda": 1.8744167950144734,
+    "gamma": 2.9745783786689786
+  },
+  "best_cv_macro_f1": 0.9339850430032142,
+  "trials": 40,
+  "search_seconds": 517.6113896369934,
+  "objective": "mean GroupKFold candidate-level macro F1",
+  "folds": 3,
+  "search_stride": 6
+}
