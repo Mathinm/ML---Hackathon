@@ -1,0 +1,30 @@
+logreg fold 0 {'macro_f1': 0.9, 'precision': 0.8579, 'recall': 0.7991, 'log_loss': 0.13, 'top1': 0.8645, 'infer_ms_per_1k_obs': 1.9678}
+logreg fold 1 {'macro_f1': 0.8992, 'precision': 0.8366, 'recall': 0.8117, 'log_loss': 0.1244, 'top1': 0.8702, 'infer_ms_per_1k_obs': 1.8483}
+logreg fold 2 {'macro_f1': 0.9034, 'precision': 0.8361, 'recall': 0.8256, 'log_loss': 0.1289, 'top1': 0.8416, 'infer_ms_per_1k_obs': 2.4349}
+logreg fold 3 {'macro_f1': 0.9006, 'precision': 0.866, 'recall': 0.7935, 'log_loss': 0.121, 'top1': 0.8841, 'infer_ms_per_1k_obs': 1.631}
+logreg fold 4 {'macro_f1': 0.9193, 'precision': 0.8594, 'recall': 0.8733, 'log_loss': 0.1259, 'top1': 0.8799, 'infer_ms_per_1k_obs': 1.5501}
+==> {'model': 'logreg', 'family': 'Linear', 'train_rows': 436888, 'cv_macro_f1': np.float64(0.9045), 'cv_macro_f1_std': np.float64(0.0084), 'cv_top1': np.float64(0.8681), 'cv_log_loss': np.float64(0.126), 'train_time_s': 1.1721, 'test_macro_f1': 0.9058, 'test_precision': 0.8413, 'test_recall': 0.833, 'test_log_loss': 0.1166, 'test_top1': 0.8668, 'test_infer_ms_per_1k_obs': 2.0677, 'test_route_continuity': 0.7153}
+gnb fold 0 {'macro_f1': 0.8442, 'precision': 0.6593, 'recall': 0.84, 'log_loss': 0.5213, 'top1': 0.8449, 'infer_ms_per_1k_obs': 3.8353}
+gnb fold 1 {'macro_f1': 0.8464, 'precision': 0.64, 'recall': 0.8759, 'log_loss': 0.4878, 'top1': 0.8497, 'infer_ms_per_1k_obs': 4.1871}
+gnb fold 2 {'macro_f1': 0.8509, 'precision': 0.6499, 'recall': 0.8745, 'log_loss': 0.4858, 'top1': 0.833, 'infer_ms_per_1k_obs': 4.2115}
+gnb fold 3 {'macro_f1': 0.8549, 'precision': 0.6633, 'recall': 0.8833, 'log_loss': 0.4935, 'top1': 0.8595, 'infer_ms_per_1k_obs': 3.8594}
+gnb fold 4 {'macro_f1': 0.842, 'precision': 0.6317, 'recall': 0.9237, 'log_loss': 0.7566, 'top1': 0.8583, 'infer_ms_per_1k_obs': 3.1345}
+==> {'model': 'gnb', 'family': 'Probabilistic', 'train_rows': 436888, 'cv_macro_f1': np.float64(0.8477), 'cv_macro_f1_std': np.float64(0.0052), 'cv_top1': np.float64(0.8491), 'cv_log_loss': np.float64(0.549), 'train_time_s': 0.1798, 'test_macro_f1': 0.8399, 'test_precision': 0.621, 'test_recall': 0.8935, 'test_log_loss': 0.5713, 'test_top1': 0.845, 'test_infer_ms_per_1k_obs': 3.0964, 'test_route_continuity': 0.7181}
+random_forest fold 0 {'macro_f1': 0.9259, 'precision': 0.9055, 'recall': 0.8411, 'log_loss': 0.0863, 'top1': 0.8758, 'infer_ms_per_1k_obs': 48.7704}
+random_forest fold 1 {'macro_f1': 0.9296, 'precision': 0.9012, 'recall': 0.8539, 'log_loss': 0.0771, 'top1': 0.8911, 'infer_ms_per_1k_obs': 51.3652}
+random_forest fold 2 {'macro_f1': 0.9301, 'precision': 0.8944, 'recall': 0.861, 'log_loss': 0.0831, 'top1': 0.858, 'infer_ms_per_1k_obs': 46.002}
+random_forest fold 3 {'macro_f1': 0.9346, 'precision': 0.9211, 'recall': 0.8554, 'log_loss': 0.0818, 'top1': 0.8969, 'infer_ms_per_1k_obs': 62.204}
+random_forest fold 4 {'macro_f1': 0.9419, 'precision': 0.9235, 'recall': 0.8836, 'log_loss': 0.0833, 'top1': 0.8903, 'infer_ms_per_1k_obs': 43.7653}
+==> {'model': 'random_forest', 'family': 'Ensemble (bagging)', 'train_rows': 436888, 'cv_macro_f1': np.float64(0.9324), 'cv_macro_f1_std': np.float64(0.0061), 'cv_top1': np.float64(0.8824), 'cv_log_loss': np.float64(0.0823), 'train_time_s': 85.3711, 'test_macro_f1': 0.9321, 'test_precision': 0.9042, 'test_recall': 0.8613, 'test_log_loss': 0.0774, 'test_top1': 0.887, 'test_infer_ms_per_1k_obs': 52.4868, 'test_route_continuity': 0.7477}
+mlp fold 0 {'macro_f1': 0.9208, 'precision': 0.8976, 'recall': 0.8316, 'log_loss': 0.0966, 'top1': 0.8713, 'infer_ms_per_1k_obs': 5.0397}
+mlp fold 1 {'macro_f1': 0.9228, 'precision': 0.8967, 'recall': 0.8352, 'log_loss': 0.0865, 'top1': 0.8861, 'infer_ms_per_1k_obs': 4.3623}
+mlp fold 2 {'macro_f1': 0.9228, 'precision': 0.884, 'recall': 0.8459, 'log_loss': 0.0963, 'top1': 0.8512, 'infer_ms_per_1k_obs': 5.121}
+mlp fold 3 {'macro_f1': 0.9277, 'precision': 0.8958, 'recall': 0.856, 'log_loss': 0.0879, 'top1': 0.892, 'infer_ms_per_1k_obs': 4.8068}
+mlp fold 4 {'macro_f1': 0.9305, 'precision': 0.9057, 'recall': 0.8636, 'log_loss': 0.0999, 'top1': 0.8843, 'infer_ms_per_1k_obs': 3.1477}
+==> {'model': 'mlp', 'family': 'Neural network', 'train_rows': 436888, 'cv_macro_f1': np.float64(0.9249), 'cv_macro_f1_std': np.float64(0.004), 'cv_top1': np.float64(0.877), 'cv_log_loss': np.float64(0.0934), 'train_time_s': 47.8625, 'test_macro_f1': 0.9293, 'test_precision': 0.8951, 'test_recall': 0.8603, 'test_log_loss': 0.0806, 'test_top1': 0.8862, 'test_infer_ms_per_1k_obs': 3.7012, 'test_route_continuity': 0.7471}
+xgboost fold 0 {'macro_f1': 0.9219, 'precision': 0.8908, 'recall': 0.8415, 'log_loss': 0.0927, 'top1': 0.8669, 'infer_ms_per_1k_obs': 30.6323}
+xgboost fold 1 {'macro_f1': 0.9334, 'precision': 0.8966, 'recall': 0.8712, 'log_loss': 0.0761, 'top1': 0.8962, 'infer_ms_per_1k_obs': 39.8318}
+xgboost fold 2 {'macro_f1': 0.9301, 'precision': 0.8906, 'recall': 0.8647, 'log_loss': 0.0842, 'top1': 0.8623, 'infer_ms_per_1k_obs': 36.9702}
+xgboost fold 3 {'macro_f1': 0.9337, 'precision': 0.9073, 'recall': 0.865, 'log_loss': 0.0803, 'top1': 0.8954, 'infer_ms_per_1k_obs': 25.3811}
+xgboost fold 4 {'macro_f1': 0.9389, 'precision': 0.9091, 'recall': 0.8878, 'log_loss': 0.0875, 'top1': 0.887, 'infer_ms_per_1k_obs': 23.3898}
+==> {'model': 'xgboost', 'family': 'Boosting', 'train_rows': 436888, 'cv_macro_f1': np.float64(0.9316), 'cv_macro_f1_std': np.float64(0.0063), 'cv_top1': np.float64(0.8815), 'cv_log_loss': np.float64(0.0841), 'train_time_s': 14.0046, 'test_macro_f1': 0.936, 'test_precision': 0.9096, 'test_recall': 0.8691, 'test_log_loss': 0.0738, 'test_top1': 0.8994, 'test_infer_ms_per_1k_obs': 26.8312, 'test_route_continuity': 0.7552}
